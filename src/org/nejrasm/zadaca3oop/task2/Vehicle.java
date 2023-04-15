@@ -9,10 +9,6 @@ public class Vehicle {
         this.speed = 0;
     }
 
-    public double getSpeed() {
-        return this.speed;
-    }
-
     public double accelerate(final double acceleration) {
         this.speed += acceleration;
         return acceleration;
