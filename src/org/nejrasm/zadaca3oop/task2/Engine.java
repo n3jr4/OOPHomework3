@@ -1,9 +1,17 @@
 package org.nejrasm.zadaca3oop.task2;
 
 public class Engine {
-    protected double capacity;
+    private double capacity;
 
     public Engine(final double capacity) {
+        this.capacity = capacity;
+    }
+
+    public double getCapacity() {
+        return this.capacity;
+    }
+
+    public void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 

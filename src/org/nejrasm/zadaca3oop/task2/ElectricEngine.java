@@ -5,7 +5,7 @@ public class ElectricEngine extends Engine {
         super(capacity);
     }
 
-    public double brake(final double brakeSpeed) {
-        return this.capacity += brakeSpeed * 0.1;
+    public void brake(final double brakeSpeed) {
+        this.setCapacity(super.increaseCapacity(brakeSpeed * 0.1));
     }
 }

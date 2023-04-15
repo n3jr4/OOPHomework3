@@ -10,12 +10,12 @@ public class Car extends Vehicle {
 
     @Override
     public double accelerate(final double acceleration) {
-        final double capacityState = this.carEngine.decreaseCapacity(0.2 * acceleration / 100);
-        if ((this.carEngine.capacity - capacityState) > 0) {
-            this.carEngine.capacity = capacityState;
+        final double capacityState = this.carEngine.decreaseCapacity(0.2 * acceleration);
+        if ((this.carEngine.getCapacity() - capacityState) > 0) {
+            this.carEngine.setCapacity(capacityState);
             super.accelerate(acceleration);
         }
-        return this.speed;
+        return acceleration;
     }
 
     @Override

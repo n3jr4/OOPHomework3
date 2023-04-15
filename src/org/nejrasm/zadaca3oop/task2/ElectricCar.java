@@ -10,20 +10,19 @@ public class ElectricCar extends Vehicle {
 
     @Override
     public double accelerate(final double acceleration) {
-        final double capacityState = this.electricCarEngine.decreaseCapacity(0.4 * acceleration / 100);
-        if ((this.electricCarEngine.capacity - capacityState) > 0) {
-            this.electricCarEngine.capacity = capacityState;
+        final double capacityState = this.electricCarEngine.decreaseCapacity(0.4 * acceleration);
+        if ((this.electricCarEngine.getCapacity() - capacityState) > 0) {
+            this.electricCarEngine.setCapacity(capacityState);
             super.accelerate(acceleration);
         }
-        return this.speed;
+        return acceleration;
     }
 
     @Override
     public double decelerate(final double deceleration) {
-        super.decelerate(deceleration);
-        this.electricCarEngine.brake(deceleration / 100); //I have added here /100 to make more sens in calculations. Sample with increase is commented below.
-        //this.electricCarEngine.capacity = this.electricCarEngine.increaseCapacity(0.1*deceleration/100);
-        return this.speed;
+        double amountToIncreaseCharge = super.decelerate(deceleration);
+        this.electricCarEngine.brake(amountToIncreaseCharge);
+        return amountToIncreaseCharge;
     }
 
     @Override
