@@ -4,14 +4,15 @@ public class Engine {
     private double capacity;
 
     public Engine(final double capacity) {
+
         this.capacity = capacity;
     }
 
-    public double getCapacity() {
+    protected double getCapacity() {
         return this.capacity;
     }
 
-    public void setCapacity(double capacity) {
+    protected void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 
